@@ -1,10 +1,15 @@
 from django.shortcuts import render, redirect
 from .forms import MovieForm
+from .models import Movie
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'movies/index.html')
+    movies = Movie.objects.order_by('-pk')
+    context = {
+        'movies': movies
+    }
+    return render(request, 'movies/index.html', context)
 
 def create(request):
     if request.method == 'POST':
