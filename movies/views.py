@@ -30,3 +30,17 @@ def detail(request, pk):
         'movie': movie
     }
     return render(request, 'movies/detail.html', context)
+
+def update(request, pk):
+    movie = Movie.objects.get(pk=pk)
+    if request.method == 'POST':
+        movie_form = MovieForm(request.POST, instance=movie)
+        if movie_form.is_valid():
+            movie_form.save()
+            return redirect('movies:detail', movie.pk)
+    else: 
+        movie_form = MovieForm(instance=movie)
+    context = {
+        'movie_form': movie_form
+    }
+    return render(request, 'movies/update.html', context)

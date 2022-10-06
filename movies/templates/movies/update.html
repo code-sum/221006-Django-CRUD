@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  {% load django_bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+
+  <div class="containter mx-5">
+    <div class="row mx-5">
+      <div class="col mx-5">
+        <h1 class="my-4">✂️수정하기</h1>
+        <form action="" method="POST">
+          {% csrf_token %}
+          {% bootstrap_form movie_form %}
+          {% bootstrap_button content="수정완료" button_type="submit" button_class="btn-primary col-12" %}
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

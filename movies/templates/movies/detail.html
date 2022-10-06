@@ -12,6 +12,10 @@
           <h1 class="fw-bold mb-4">{{ movie.title }}</h1>
           <p>{{ movie.summary }}</p>
         </div>
+        <!-- Button box -->
+        <div class="d-flex flex-row-reverse mx-5">
+          <a class="btn btn-outline-success" href="{% url 'movies:update' movie.pk %}">수정하기</a>
+        </div>
       </div>
     </div>
   </div>
