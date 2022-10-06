@@ -23,3 +23,10 @@ def create(request):
         'movie_form': movie_form
     }
     return render(request, 'movies/new.html', context=context)
+
+def detail(request, pk):
+    movie = Movie.objects.get(pk=pk)
+    context = {
+        'movie': movie
+    }
+    return render(request, 'movies/detail.html', context)

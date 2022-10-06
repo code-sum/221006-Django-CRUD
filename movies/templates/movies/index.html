@@ -20,7 +20,7 @@
             <tr>
               <th scope="row">{{ forloop.revcounter }}</th>
               <td>
-                <a class="text-decoration-none" href="#">{{ i.title }}</a>
+                <a class="text-decoration-none" href="{% url 'movies:detail' i.pk %}">{{ i.title }}</a>
               </td>
               <td>{{ i.running_time }}</td>
             </tr>
