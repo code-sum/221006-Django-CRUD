@@ -9,7 +9,7 @@
   <div class="containter mx-5">
     <div class="row mx-5">
       <div class="col mx-5">
-        <h1 class="my-4">✖️영화 더하기</h1>
+        <h1 class="fw-bold my-4">✖️영화 더하기</h1>
         <form action="{% url 'movies:create' %}" method="POST">
           {% csrf_token %}
           {% bootstrap_form movie_form %}
